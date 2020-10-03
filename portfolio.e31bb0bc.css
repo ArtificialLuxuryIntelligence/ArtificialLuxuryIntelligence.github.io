@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Ropa+Sans&display=swap");
 html,
 body,
 div,
@@ -174,7 +174,7 @@ table {
   }
   to {
     transform: rotate(180deg);
-    color: red;
+    color: #ed48d6;
   }
 }
 @keyframes point {
@@ -220,12 +220,21 @@ html {
 
 body {
   font-family: "Ropa Sans", sans-serif;
-  background-color: #fddf7e;
+  font-weight: 300;
   background-image: linear-gradient(0deg, #ce97fb, #f6a5eb);
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body a {
+  font-family: "Ropa Sans", sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.02em;
 }
 
 p {
-  line-height: 1.25;
+  line-height: 1.15;
 }
 
 em {
@@ -233,53 +242,68 @@ em {
 }
 
 .page-container {
+  position: relative;
   max-width: 1066px;
-  background-color: white;
+  background-color: #fafafa;
   margin: 0 auto;
   padding: 0 4rem;
   min-height: 100vh;
 }
-.page-container > header {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
+.page-container .nav-active .logo {
+  animation: rhs-slide-in 0.7s forwards;
 }
-.page-container > header nav {
+.page-container .nav-active ul {
+  animation: lhs-slide-in 0.7s forwards;
+}
+.page-container nav {
   font-size: 1.3em;
-  position: absolute;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   max-width: 1066px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;
-  top: 0;
+  padding: 0.4em 0.5em;
   display: flex;
   justify-content: space-between;
+  background-color: #ce97fb;
 }
-.page-container > header nav .logo {
+.page-container nav .logo {
   opacity: 0;
-  animation: rhs-slide-in 0.7s forwards 9.5s;
+  color: #fafafa;
 }
-.page-container > header nav ul {
+.page-container nav ul {
   width: 40%;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   opacity: 0;
   height: 100%;
-  animation: lhs-slide-in 0.7s forwards 9.5s;
 }
-.page-container > header nav ul li {
+.page-container nav ul li {
   text-align: center;
   height: 100%;
 }
-.page-container > header nav ul li a {
+.page-container nav ul li a {
   display: block;
   padding: 0.3em 0.4em;
   text-decoration: none;
-  color: inherit;
+  color: #fafafa;
+  transform: all 1s ease;
+}
+.page-container nav ul li a:hover {
+  transform: all 1s ease;
+}
+.page-container > header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 .page-container > header .title-text {
   display: flex;
@@ -289,7 +313,7 @@ em {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  animation: fade-in 0.6s ease forwards 10.5s;
+  animation: fade-in 0.6s ease forwards 9.5s;
   font-size: 3.4rem;
 }
 .page-container > header .title-text h1,
@@ -300,7 +324,7 @@ em {
 }
 .page-container > header .title-text h1 {
   text-align: right;
-  color: #b766f9;
+  color: #a035f7;
   font-size: 1em;
 }
 .page-container > header .title-text h2 {
@@ -405,6 +429,12 @@ em {
   min-height: 100vh;
   margin: 0rem auto;
 }
+.content section:target::before {
+  content: "";
+  display: block;
+  height: 5rem;
+  margin: -5rem 0 0;
+}
 .content section > div {
   margin-bottom: 4.4rem;
 }
@@ -417,13 +447,10 @@ em {
   place-items: center;
 }
 #projects .project header {
-  height: 20rem;
+  height: 25rem;
+  width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: radial-gradient(circle, white, rgba(0, 0, 0, 0.096));
+  background: radial-gradient(circle, white, #e0e0e0);
   background-clip: content-box;
   padding: 0 3rem;
 }
@@ -435,15 +462,14 @@ em {
   left: 0.2em;
 }
 #projects .project header img {
-  margin-top: 2.9em;
-  bottom: 1.2em;
-  right: 3em;
-  width: 70%;
-  object-fit: contain;
+  position: absolute;
+  left: 24%;
+  top: 30%;
+  width: 58%;
 }
 #projects .project .details h2 {
   color: #ed48d6;
-  font-size: 1.6em;
+  font-size: 1.7em;
   margin-bottom: 1em;
 }
 #projects .project .details p {
@@ -453,6 +479,35 @@ em {
 footer {
   text-align: right;
   padding: 1.2em;
+  background-color: #fddf7e;
+}
+
+.project-buttons {
+  margin-top: 0.8em;
+  width: 100%;
+  text-align: center;
+}
+.project-buttons button {
+  margin-left: 0.4em;
+}
+
+button,
+#submit {
+  cursor: pointer;
+  font-weight: 400;
+  display: inline-block;
+  padding: 0.4em 0.6em;
+  border-radius: 6px;
+  color: #a035f7;
+  background-color: #fafafa;
+  border: 0.5px solid #a035f7;
+  transition: all 0.1s;
+}
+button:hover,
+#submit:hover {
+  color: #fafafa;
+  background-color: #ed48d6;
+  border: 0.5px solid #ed48d6;
 }
 
 /*# sourceMappingURL=/portfolio.e31bb0bc.css.map */

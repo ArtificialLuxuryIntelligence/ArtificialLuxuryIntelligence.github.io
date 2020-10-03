@@ -193,6 +193,36 @@ module.hot.accept(reloadCSS);
 "use strict";
 
 require("./styles.scss");
+
+//Delay for hero animation
+var arrowTime = 8500;
+var nav = document.querySelector('nav');
+var hero = document.querySelector('.hero-content');
+
+function activateNav() {
+  if (nav.classList.contains('nav-active')) {} else {
+    nav.classList.add('nav-active');
+  }
+}
+
+(function () {
+  // Activate nav after hero animation
+  setTimeout(function () {
+    activateNav();
+  }, arrowTime + 1000); //  Active nav if page is scrolled down
+
+  var options = {
+    root: null,
+    rootMargin: '-200px',
+    threshold: 0
+  };
+  var observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      entry.isIntersecting ? null : activateNav();
+    });
+  }, options);
+  observer.observe(hero, options);
+})();
 },{"./styles.scss":"styles.scss"}],"../../.nvm/versions/node/v12.16.3/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -221,7 +251,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50842" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63007" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
