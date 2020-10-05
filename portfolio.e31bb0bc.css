@@ -545,7 +545,7 @@ em {
   margin: 1.2em 0;
 }
 #projects .project .details .project-buttons {
-  margin-top: 2em;
+  margin: 2.4em 0;
 }
 
 #about .about-contents {
@@ -644,12 +644,13 @@ footer {
 }
 
 button,
-#submit {
+#submit,
+.external_link {
   cursor: pointer;
   font-size: 0.9em;
   font-weight: 400;
   display: inline-block;
-  padding: 0.5em 1.2em;
+  padding: 0.5em 1.1em;
   border-radius: 6px;
   transition: all 0.1s;
   color: #fafafa;
@@ -657,10 +658,15 @@ button,
   border: 0.5px solid #ed48d6;
 }
 button:hover,
-#submit:hover {
+#submit:hover,
+.external_link:hover {
   color: #a035f7;
   background-color: #fafafa;
   border: 0.5px solid #a035f7;
+}
+
+.external_link {
+  margin: 0 0.6em;
 }
 
 @media only screen and (max-width: 980px) {
