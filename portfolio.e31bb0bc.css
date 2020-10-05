@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Ropa+Sans&display=swap");
 html,
 body,
 div,
@@ -214,14 +213,23 @@ table {
   background: #f6a5eb;
 }
 
+@font-face {
+  font-family: "Yaldevi C Light";
+  src: url("/YaldeviColombo-Light.d1feb497.woff") format("woff");
+}
+@font-face {
+  font-family: "Yaldevi C Medium";
+  src: url("/YaldeviColombo-Medium.6d597361.woff") format("woff");
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Ropa Sans", sans-serif;
+  font-family: "Yaldevi C Light";
   font-weight: 300;
-  background-image: linear-gradient(0deg, #ce97fb, #f6a5eb);
+  background-image: linear-gradient(0deg, #e5c8fd, #fbd3f5);
 }
 body h1,
 body h2,
@@ -229,25 +237,44 @@ body h3,
 body h4,
 body a {
   font-family: "Ropa Sans", sans-serif;
+  font-family: "Yaldevi C Medium";
   font-weight: 200;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
-p {
+p,
+li {
   line-height: 1.15;
+  letter-spacing: 0.02em;
+  font-size: 1.1em;
+}
+
+li {
+  line-height: 1.55;
+}
+
+a {
+  text-decoration: none;
+  color: #a035f7;
 }
 
 em {
   font-style: italic;
 }
 
+.purple-text {
+  color: #a035f7;
+}
+
 .page-container {
   position: relative;
-  max-width: 1066px;
+  max-width: 1280px;
   background-color: #fafafa;
   margin: 0 auto;
   padding: 0 4rem;
   min-height: 100vh;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 .page-container .nav-active .logo {
   animation: rhs-slide-in 0.7s forwards;
@@ -258,17 +285,19 @@ em {
 .page-container nav {
   font-size: 1.3em;
   z-index: 2;
+  opacity: 0.9;
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1066px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0.4em 0.5em;
+  padding: 0 0.4em;
   display: flex;
   justify-content: space-between;
   background-color: #ce97fb;
+  background: linear-gradient(#ce97fb, #dab0fc);
 }
 .page-container nav .logo {
   opacity: 0;
@@ -313,7 +342,7 @@ em {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  animation: fade-in 0.6s ease forwards 9.5s;
+  animation: fade-in 0.6s ease forwards 7.5s;
   font-size: 3.4rem;
 }
 .page-container > header .title-text h1,
@@ -335,7 +364,7 @@ em {
   display: block;
   width: 100%;
   animation: point 1s infinite ease-in-out alternate;
-  animation-delay: 9.9s;
+  animation-delay: 7.9s;
 }
 .page-container > header .text-container {
   position: relative;
@@ -346,7 +375,7 @@ em {
   color: inherit;
   text-decoration: none;
   animation: arrowflip 1.4s ease forwards;
-  animation-delay: 8.5s;
+  animation-delay: 6.5s;
 }
 .page-container > header .text-container h1,
 .page-container > header .text-container h2 {
@@ -362,47 +391,47 @@ em {
 }
 .page-container > header .text-container h1:nth-child(1),
 .page-container > header .text-container h2:nth-child(1) {
-  animation-delay: 1s;
+  animation-delay: 0.7s;
 }
 .page-container > header .text-container h1:nth-child(2),
 .page-container > header .text-container h2:nth-child(2) {
-  animation-delay: 2s;
+  animation-delay: 1.4s;
 }
 .page-container > header .text-container h1:nth-child(3),
 .page-container > header .text-container h2:nth-child(3) {
-  animation-delay: 3s;
+  animation-delay: 2.1s;
 }
 .page-container > header .text-container h1:nth-child(4),
 .page-container > header .text-container h2:nth-child(4) {
-  animation-delay: 4s;
+  animation-delay: 2.8s;
 }
 .page-container > header .text-container h1:nth-child(5),
 .page-container > header .text-container h2:nth-child(5) {
-  animation-delay: 5s;
+  animation-delay: 3.5s;
 }
 .page-container > header .text-container h1:nth-child(6),
 .page-container > header .text-container h2:nth-child(6) {
-  animation-delay: 6s;
+  animation-delay: 4.2s;
 }
 .page-container > header .text-container h1:nth-child(7),
 .page-container > header .text-container h2:nth-child(7) {
-  animation-delay: 6.75s;
+  animation-delay: 4.75s;
 }
 .page-container > header .text-container h1:nth-child(8),
 .page-container > header .text-container h2:nth-child(8) {
-  animation-delay: 7s;
+  animation-delay: 5s;
 }
 .page-container > header .text-container h1:nth-child(9),
 .page-container > header .text-container h2:nth-child(9) {
-  animation-delay: 7.25s;
+  animation-delay: 5.25s;
 }
 .page-container > header .text-container h1:nth-child(10),
 .page-container > header .text-container h2:nth-child(10) {
-  animation-delay: 7.5s;
+  animation-delay: 5.5s;
 }
 .page-container > header .text-container h1:nth-child(11),
 .page-container > header .text-container h2:nth-child(11) {
-  animation-delay: 7.75s;
+  animation-delay: 5.75s;
 }
 .page-container > header .text-container h1 {
   font-size: 1em;
@@ -413,11 +442,11 @@ em {
 }
 .page-container > header .point {
   animation: point 1s infinite ease-in-out alternate;
-  animation-delay: 9.9s;
+  animation-delay: 7.9s;
 }
 .page-container > header .flip-back {
   display: inline-block;
-  animation: flip-back 0s forwards ease 8.8s;
+  animation: flip-back 0s forwards ease 6.8s;
 }
 
 .content h1 {
@@ -426,30 +455,35 @@ em {
   margin-bottom: 2rem;
 }
 .content section {
-  min-height: 100vh;
   margin: 0rem auto;
+  margin-bottom: 4.4rem;
 }
 .content section:target::before {
   content: "";
   display: block;
-  height: 5rem;
-  margin: -5rem 0 0;
-}
-.content section > div {
-  margin-bottom: 4.4rem;
+  height: 8rem;
+  margin: -8rem 0 0;
 }
 
 #projects .project {
+  margin: 4.4rem 0;
+  width: 100%;
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: auto;
-  grid-gap: 2rem 1rem;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.4rem 2rem;
+  background: linear-gradient(95.63deg, rgba(255, 255, 255, 0) 4.41%, rgba(206, 151, 251, 0.2) 99.41%);
+  border-radius: 25px;
+}
+#projects .project:nth-of-type(1) {
+  margin-top: 0;
 }
 #projects .project header {
   height: 25rem;
   width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: radial-gradient(circle, white, #e0e0e0);
   background-clip: content-box;
   padding: 0 3rem;
@@ -462,18 +496,121 @@ em {
   left: 0.2em;
 }
 #projects .project header img {
-  position: absolute;
-  left: 24%;
-  top: 30%;
-  width: 58%;
+  width: 80%;
+  object-fit: contain;
+}
+#projects .project h1 {
+  grid-column: 1/span 2;
+  grid-row: 1/span 1;
+  font-size: 2.4em;
+  margin: 0;
+}
+#projects .project .cover,
+#projects .project .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#projects .project .cover {
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+  padding: 1.6rem;
+}
+#projects .project .cover img {
+  width: 100%;
+}
+#projects .project .details {
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  padding: 1rem 4rem;
 }
 #projects .project .details h2 {
   color: #ed48d6;
   font-size: 1.7em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 #projects .project .details p {
-  padding: 0.8em 0;
+  margin: 1.2em 0;
+}
+#projects .project .details .project-buttons {
+  margin-top: 2em;
+}
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0rem 2rem;
+  background: linear-gradient(95.63deg, rgba(255, 255, 255, 0) 4.41%, rgba(206, 151, 251, 0.2) 99.41%);
+  border-radius: 25px;
+}
+#about div {
+  padding: 2.4rem 4rem;
+}
+#about div:nth-last-of-type(1) {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+#about div:nth-last-of-type(2) {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+}
+#about div h2 {
+  font-size: 2rem;
+  color: #ed48d6;
+  margin-bottom: 1em;
+}
+#about div p {
+  margin: 1em 0;
+}
+
+#contact .form-container {
+  margin: 0 auto;
+  padding-bottom: 3em;
+  max-width: 600px;
+}
+#contact .form-container form .form-field {
+  position: relative;
+}
+#contact .form-container form label {
+  color: #ed48d6;
+  font-size: 1.5em;
+  left: 0.5em;
+  position: absolute;
+  top: 0.5em;
+  transition: all 0.1s linear;
+}
+#contact .form-container form input,
+#contact .form-container form textarea {
+  font-family: "Yaldevi C Light";
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #f6a5eb;
+  color: #666;
+  font-size: 1.5em;
+  padding: 1em 0.5em 0.5em;
+  width: 100%;
+}
+#contact .form-container form input {
+  max-width: 200px;
+}
+#contact .form-container form textarea {
+  max-width: 100%;
+  min-width: 100%;
+}
+#contact .form-container form input:focus + label,
+#contact .form-container form label.show,
+#contact .form-container form textarea:focus + label,
+#contact .form-container form label.show {
+  border-radius: 4px;
+  color: #a035f7;
+  font-size: 1em;
+  left: 0.5em;
+  padding: 0 0.15em;
+  top: 0.2em;
+}
+#contact .form-container form #submit {
+  display: block;
+  margin: 2em 0 2em auto;
 }
 
 footer {
@@ -494,9 +631,10 @@ footer {
 button,
 #submit {
   cursor: pointer;
+  font-size: 0.9em;
   font-weight: 400;
   display: inline-block;
-  padding: 0.4em 0.6em;
+  padding: 0.5em 1.2em;
   border-radius: 6px;
   color: #a035f7;
   background-color: #fafafa;

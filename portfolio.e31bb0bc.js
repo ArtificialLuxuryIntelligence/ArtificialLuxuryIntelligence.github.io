@@ -189,15 +189,28 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.nvm/versions/node/v12.16.3/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"/home/adgk/projects/portfolio/assets/fonts/YaldeviColombo-Light.woff":[["YaldeviColombo-Light.d1feb497.woff","assets/fonts/YaldeviColombo-Light.woff"],"assets/fonts/YaldeviColombo-Light.woff"],"/home/adgk/projects/portfolio/assets/fonts/YaldeviColombo-Medium.woff":[["YaldeviColombo-Medium.6d597361.woff","assets/fonts/YaldeviColombo-Medium.woff"],"assets/fonts/YaldeviColombo-Medium.woff"],"_css_loader":"../../.nvm/versions/node/v12.16.3/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./styles.scss");
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //Delay for hero animation
-var arrowTime = 8500;
+var arrowTime = 6000;
 var nav = document.querySelector('nav');
 var hero = document.querySelector('.hero-content');
+var year = document.getElementById('year');
 
 function activateNav() {
   if (nav.classList.contains('nav-active')) {} else {
@@ -221,7 +234,24 @@ function activateNav() {
       entry.isIntersecting ? null : activateNav();
     });
   }, options);
-  observer.observe(hero, options);
+  observer.observe(hero, options); //floating labels in form
+
+  var inputs = [].concat(_toConsumableArray(document.querySelectorAll('input')), _toConsumableArray(document.querySelectorAll('textarea')));
+  console.log(inputs);
+  inputs.forEach(function (input) {
+    var label = input.nextElementSibling;
+    input.addEventListener('input', function (e) {
+      console.log(label);
+      console.log(e.target.value);
+
+      if (e.target.value === '') {
+        label.classList.remove('show');
+      } else {
+        label.classList.add('show');
+      }
+    });
+  }); //  Set current year in footer
+  // year.innerText = new Date().getFullYear();
 })();
 },{"./styles.scss":"styles.scss"}],"../../.nvm/versions/node/v12.16.3/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -251,7 +281,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63007" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53328" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
