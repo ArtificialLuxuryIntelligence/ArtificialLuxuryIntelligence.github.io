@@ -271,16 +271,10 @@ em {
   max-width: 1280px;
   background-color: #fafafa;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 3%;
   min-height: 100vh;
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
-}
-.page-container .nav-active .logo {
-  animation: rhs-slide-in 0.7s forwards;
-}
-.page-container .nav-active ul {
-  animation: lhs-slide-in 0.7s forwards;
 }
 .page-container nav {
   font-size: 1.3em;
@@ -325,6 +319,12 @@ em {
 .page-container nav ul li a:hover {
   transform: all 1s ease;
 }
+.page-container .nav-active .logo {
+  animation: rhs-slide-in 0.7s forwards;
+}
+.page-container .nav-active ul {
+  animation: lhs-slide-in 0.7s forwards;
+}
 .page-container > header {
   position: relative;
   overflow: hidden;
@@ -343,13 +343,13 @@ em {
   align-items: center;
   opacity: 0;
   animation: fade-in 0.6s ease forwards 7.5s;
-  font-size: 3.4rem;
+  font-size: 3.4em;
 }
 .page-container > header .title-text h1,
 .page-container > header .title-text h2 {
   width: 100%;
   font-weight: 200;
-  margin: 0 1rem;
+  margin: 0 0.4em;
 }
 .page-container > header .title-text h1 {
   text-align: right;
@@ -369,7 +369,7 @@ em {
 .page-container > header .text-container {
   position: relative;
   display: block;
-  font-size: 2.4rem;
+  font-size: 2.4em;
   text-align: center;
   z-index: 1;
   color: inherit;
@@ -455,14 +455,15 @@ em {
   margin-bottom: 2rem;
 }
 .content section {
+  position: relative;
   margin: 0rem auto;
   margin-bottom: 4.4rem;
 }
 .content section:target::before {
   content: "";
   display: block;
-  height: 8rem;
-  margin: -8rem 0 0;
+  height: 10rem;
+  margin: -10rem 0 0;
 }
 
 #projects .project {
@@ -522,7 +523,7 @@ em {
 #projects .project .details {
   grid-column: 2/span 1;
   grid-row: 2/span 1;
-  padding: 1rem 4rem;
+  padding: 1em 4em;
 }
 #projects .project .details h2 {
   color: #ed48d6;
@@ -536,42 +537,45 @@ em {
   margin-top: 2em;
 }
 
-#about {
+#about .about-contents {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0rem 2rem;
   background: linear-gradient(95.63deg, rgba(255, 255, 255, 0) 4.41%, rgba(206, 151, 251, 0.2) 99.41%);
   border-radius: 25px;
 }
-#about div {
+#about .about-contents div {
   padding: 2.4rem 4rem;
 }
-#about div:nth-last-of-type(1) {
+#about .about-contents div:nth-last-of-type(1) {
   grid-column: 1/span 1;
   grid-row: 1/span 1;
 }
-#about div:nth-last-of-type(2) {
+#about .about-contents div:nth-last-of-type(2) {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
 }
-#about div h2 {
+#about .about-contents div h2 {
   font-size: 2rem;
   color: #ed48d6;
   margin-bottom: 1em;
 }
-#about div p {
+#about .about-contents div p {
   margin: 1em 0;
 }
 
-#contact .form-container {
+#contact .contact-contents {
   margin: 0 auto;
   padding-bottom: 3em;
   max-width: 600px;
 }
-#contact .form-container form .form-field {
+#contact .contact-contents form {
+  margin-top: 2rem;
+}
+#contact .contact-contents form .form-field {
   position: relative;
 }
-#contact .form-container form label {
+#contact .contact-contents form label {
   color: #ed48d6;
   font-size: 1.5em;
   left: 0.5em;
@@ -579,8 +583,8 @@ em {
   top: 0.5em;
   transition: all 0.1s linear;
 }
-#contact .form-container form input,
-#contact .form-container form textarea {
+#contact .contact-contents form input,
+#contact .contact-contents form textarea {
   font-family: "Yaldevi C Light";
   background-color: transparent;
   border: none;
@@ -590,17 +594,17 @@ em {
   padding: 1em 0.5em 0.5em;
   width: 100%;
 }
-#contact .form-container form input {
-  max-width: 200px;
+#contact .contact-contents form input {
+  max-width: 400px;
 }
-#contact .form-container form textarea {
+#contact .contact-contents form textarea {
   max-width: 100%;
   min-width: 100%;
 }
-#contact .form-container form input:focus + label,
-#contact .form-container form label.show,
-#contact .form-container form textarea:focus + label,
-#contact .form-container form label.show {
+#contact .contact-contents form input:focus + label,
+#contact .contact-contents form label.show,
+#contact .contact-contents form textarea:focus + label,
+#contact .contact-contents form label.show {
   border-radius: 4px;
   color: #a035f7;
   font-size: 1em;
@@ -608,7 +612,7 @@ em {
   padding: 0 0.15em;
   top: 0.2em;
 }
-#contact .form-container form #submit {
+#contact .contact-contents form #submit {
   display: block;
   margin: 2em 0 2em auto;
 }
@@ -636,16 +640,68 @@ button,
   display: inline-block;
   padding: 0.5em 1.2em;
   border-radius: 6px;
-  color: #a035f7;
-  background-color: #fafafa;
-  border: 0.5px solid #a035f7;
   transition: all 0.1s;
-}
-button:hover,
-#submit:hover {
   color: #fafafa;
   background-color: #ed48d6;
   border: 0.5px solid #ed48d6;
+}
+button:hover,
+#submit:hover {
+  color: #a035f7;
+  background-color: #fafafa;
+  border: 0.5px solid #a035f7;
+}
+
+@media only screen and (max-width: 980px) {
+  .page-container .nav-active {
+    display: none;
+  }
+  .page-container > header {
+    font-size: 0.8rem;
+  }
+  .page-container > header .title-text {
+    width: 20ch;
+  }
+  .page-container #projects .project {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 0em;
+  }
+  .page-container #projects .project .cover {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    padding: 2em 4% 0em 4%;
+  }
+  .page-container #projects .project .details {
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+  }
+  .page-container #about .about-contents {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .page-container #about .about-contents div:nth-last-of-type(1) {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+  }
+  .page-container #about .about-contents div:nth-last-of-type(2) {
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .page-container .nav-active {
+    display: none;
+  }
+  .page-container > header {
+    font-size: 0.8rem;
+  }
+  .page-container > header .title-text {
+    font-size: 2.2em;
+  }
+  .page-container #projects .project .details {
+    padding: 1em 2em;
+  }
 }
 
 /*# sourceMappingURL=/portfolio.e31bb0bc.css.map */

@@ -237,7 +237,6 @@ function activateNav() {
   observer.observe(hero, options); //floating labels in form
 
   var inputs = [].concat(_toConsumableArray(document.querySelectorAll('input')), _toConsumableArray(document.querySelectorAll('textarea')));
-  console.log(inputs);
   inputs.forEach(function (input) {
     var label = input.nextElementSibling;
     input.addEventListener('input', function (e) {
