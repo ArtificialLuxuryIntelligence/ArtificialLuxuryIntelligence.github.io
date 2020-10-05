@@ -330,7 +330,8 @@ em {
 .page-container .nav-active .logo {
   animation: rhs-slide-in 0.7s forwards;
 }
-.page-container .nav-active ul {
+.page-container .nav-active ul,
+.page-container .nav-active span {
   animation: lhs-slide-in 0.7s forwards;
 }
 .page-container > header {
@@ -698,11 +699,11 @@ button:hover,
   }
 }
 @media only screen and (max-width: 480px) {
-  .page-container nav {
+  .page-container .nav-active {
     height: 3rem;
     z-index: 2;
   }
-  .page-container nav ul {
+  .page-container .nav-active ul {
     z-index: 1;
     transition: top 0.4s ease;
     position: absolute;
@@ -713,18 +714,18 @@ button:hover,
     left: 0;
     grid-template-columns: 1fr;
   }
-  .page-container nav ul li a {
+  .page-container .nav-active ul li a {
     padding: 2em 1em;
     background-color: #ce97fb;
   }
-  .page-container nav ul li:nth-of-type(3) a {
+  .page-container .nav-active ul li:nth-of-type(3) a {
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
   }
-  .page-container nav #nav-toggle {
+  .page-container .nav-active #nav-toggle {
     display: block;
   }
-  .page-container nav.mobile-nav-open ul {
+  .page-container .nav-active.mobile-nav-open ul {
     height: 100%;
     top: 3rem;
   }
