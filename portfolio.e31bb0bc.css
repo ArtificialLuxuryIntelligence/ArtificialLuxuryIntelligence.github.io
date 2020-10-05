@@ -277,6 +277,7 @@ em {
   border-bottom-left-radius: 2rem;
 }
 .page-container nav {
+  transition: all 0.35s ease;
   font-size: 1.3em;
   z-index: 2;
   opacity: 0.9;
@@ -290,6 +291,7 @@ em {
   padding: 0 0.4em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #ce97fb;
   background: linear-gradient(#ce97fb, #dab0fc);
 }
@@ -298,7 +300,7 @@ em {
   color: #fafafa;
 }
 .page-container nav ul {
-  width: 40%;
+  width: 30%;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -318,6 +320,12 @@ em {
 }
 .page-container nav ul li a:hover {
   transform: all 1s ease;
+}
+.page-container nav #nav-toggle {
+  display: none;
+}
+.page-container .nav-active {
+  box-shadow: 0 2px 3px #50058e;
 }
 .page-container .nav-active .logo {
   animation: rhs-slide-in 0.7s forwards;
@@ -653,8 +661,8 @@ button:hover,
 }
 
 @media only screen and (max-width: 980px) {
-  .page-container .nav-active {
-    display: none;
+  .page-container nav ul {
+    width: 50%;
   }
   .page-container > header {
     font-size: 0.8rem;
@@ -690,8 +698,35 @@ button:hover,
   }
 }
 @media only screen and (max-width: 480px) {
-  .page-container .nav-active {
-    display: none;
+  .page-container nav {
+    height: 3rem;
+    z-index: 2;
+  }
+  .page-container nav ul {
+    z-index: 1;
+    transition: top 0.4s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -30rem;
+    right: 0;
+    left: 0;
+    grid-template-columns: 1fr;
+  }
+  .page-container nav ul li a {
+    padding: 2em 1em;
+    background-color: #ce97fb;
+  }
+  .page-container nav ul li:nth-of-type(3) a {
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+  }
+  .page-container nav #nav-toggle {
+    display: block;
+  }
+  .page-container nav.mobile-nav-open ul {
+    height: 100%;
+    top: 3rem;
   }
   .page-container > header {
     font-size: 0.8rem;
@@ -700,6 +735,12 @@ button:hover,
     font-size: 2.2em;
   }
   .page-container #projects .project .details {
+    padding: 1em 2em;
+  }
+  .page-container #about .about-contents div {
+    padding: 1em 2em;
+  }
+  .page-container #contact .contact-contents {
     padding: 1em 2em;
   }
 }

@@ -211,6 +211,7 @@ var arrowTime = 6000;
 var nav = document.querySelector('nav');
 var hero = document.querySelector('.hero-content');
 var year = document.getElementById('year');
+var toggle = document.getElementById('nav-toggle');
 
 function activateNav() {
   if (nav.classList.contains('nav-active')) {} else {
@@ -234,7 +235,19 @@ function activateNav() {
       entry.isIntersecting ? null : activateNav();
     });
   }, options);
-  observer.observe(hero, options); //floating labels in form
+  observer.observe(hero, options); //  Toggle mobile nav
+
+  toggle.addEventListener('click', function () {
+    nav.classList.toggle('mobile-nav-open');
+  }); //close on link click
+
+  var links = _toConsumableArray(document.querySelectorAll('a'));
+
+  links.forEach(function (link) {
+    return link.addEventListener('click', function () {
+      nav.classList.remove('mobile-nav-open');
+    });
+  }); //floating labels in form
 
   var inputs = [].concat(_toConsumableArray(document.querySelectorAll('input')), _toConsumableArray(document.querySelectorAll('textarea')));
   inputs.forEach(function (input) {
@@ -280,7 +293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53328" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54545" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
