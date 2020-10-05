@@ -271,7 +271,7 @@ em {
   max-width: 1280px;
   background-color: #fafafa;
   margin: 0 auto;
-  padding: 0 3%;
+  padding: 0 min(3%, 3rem);
   min-height: 100vh;
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
@@ -526,6 +526,7 @@ em {
   grid-column: 1/span 1;
   grid-row: 2/span 1;
   padding: 1.6rem;
+  background-image: radial-gradient(rgba(128, 128, 128, 0.4), transparent 70%);
 }
 #projects .project .cover img {
   width: 100%;
