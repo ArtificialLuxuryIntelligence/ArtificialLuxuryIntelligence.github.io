@@ -278,7 +278,7 @@ em {
 }
 .page-container nav {
   transition: all 0.35s ease;
-  font-size: 1.3em;
+  font-size: 1.1em;
   z-index: 2;
   opacity: 0.9;
   position: fixed;
@@ -310,20 +310,22 @@ em {
 .page-container nav ul li {
   text-align: center;
   height: 100%;
+  transition: all 0.2s ease;
 }
 .page-container nav ul li a {
   display: block;
   padding: 0.3em 0.4em;
   text-decoration: none;
   color: #fafafa;
-  transform: all 1s ease;
 }
-.page-container nav ul li a:hover {
-  transform: all 1s ease;
+.page-container nav ul li:hover a {
+  color: #a035f7;
+  transition: all 0.25s ease;
 }
 .page-container nav #nav-toggle {
   display: none;
   color: #fafafa;
+  padding: 0.2em;
 }
 .page-container .nav-active {
   box-shadow: 0 2px 3px #50058e;
@@ -333,6 +335,7 @@ em {
 }
 .page-container .nav-active ul,
 .page-container .nav-active span {
+  cursor: pointer;
   animation: lhs-slide-in 0.7s forwards;
 }
 .page-container > header {
@@ -670,8 +673,14 @@ button:hover,
 }
 
 @media only screen and (max-width: 980px) {
+  .page-container nav {
+    font-size: 1.3em;
+  }
   .page-container nav ul {
     width: 50%;
+  }
+  .page-container nav ul li {
+    text-align: right;
   }
   .page-container > header {
     font-size: 0.8rem;
