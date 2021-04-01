@@ -134,7 +134,7 @@ table {
 }
 
 .fadeOut {
-  opacity: 0;
+  animation: fade-out 0.7s ease-in forwards;
 }
 
 .fadeIn {
@@ -315,6 +315,16 @@ em {
   padding: 0.4em;
   opacity: 0;
 }
+.page-container nav .logo .logo_text {
+  text-transform: uppercase;
+  margin-left: 1em;
+  color: #a035f7;
+  display: inline-block;
+  animation: fade-in 1s ease forwards;
+}
+.page-container nav .logo .logo_text.hidden {
+  animation: fade-out 1s ease forwards;
+}
 .page-container nav .logo #speech {
   color: #a035f7;
   background-color: #fafafa;
@@ -322,7 +332,6 @@ em {
   position: absolute;
   display: inline-block;
   width: 15ch;
-  pointer-events: none;
   padding: 1em 1em;
   opacity: 0;
   border: 4px solid #a035f7;
@@ -377,10 +386,10 @@ em {
   padding: 0.3em 0.4em;
   text-decoration: none;
   text-align: center;
-  color: #ce97fb;
+  color: #a035f7;
 }
 .page-container nav ul li:hover a {
-  color: #a035f7;
+  color: #50058e;
   transition: all 0.25s ease;
 }
 .page-container nav #nav-toggle {

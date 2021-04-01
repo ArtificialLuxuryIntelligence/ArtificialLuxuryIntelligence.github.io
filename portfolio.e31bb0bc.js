@@ -286,6 +286,8 @@ function activateNav() {
   // year.innerText = new Date().getFullYear();
   // Hide nav on scroll down
 
+  var logoText = document.querySelector('.logo_text');
+
   function hideNavOnScroll() {
     var prevScrollpos = window.pageYOffset;
     var wHeight = window.innerHeight;
@@ -294,7 +296,10 @@ function activateNav() {
       var currentScrollPos = window.pageYOffset;
 
       if (pageYOffset < wHeight) {
+        logoText.classList.contains('hidden') ? null : logoText.classList.add('hidden');
         return;
+      } else {
+        logoText.classList.contains('hidden') ? logoText.classList.remove('hidden') : null;
       }
 
       if (prevScrollpos > currentScrollPos) {
@@ -337,7 +342,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46637" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
