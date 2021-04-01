@@ -225,17 +225,38 @@ function activateNav() {
     activateNav();
   }, arrowTime + 1000); //  Active nav if page is scrolled down
 
-  var options = {
+  var options1 = {
     root: null,
     rootMargin: '-200px',
     threshold: 0
   };
-  var observer = new IntersectionObserver(function (entries, observer) {
+  var observer1 = new IntersectionObserver(function (entries, observer) {
     entries.forEach(function (entry) {
       entry.isIntersecting ? null : activateNav();
     });
-  }, options);
-  observer.observe(hero, options); //  Toggle mobile nav
+  }, options1);
+  observer1.observe(hero, options1); //  Fade projects in on scroll
+
+  var options2 = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7
+  };
+  var observer2 = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        // fade in observed elements that are in view
+        entry.target.classList.contains('fadeIn') ? null : entry.target.classList.add('fadeIn');
+      }
+    });
+  }, options2);
+  var fadeEls = [].concat(_toConsumableArray(document.querySelectorAll('.cover')), _toConsumableArray(document.querySelectorAll('.details')), [document.querySelector('.about-contents'), document.querySelector('#contact')]);
+  fadeEls.forEach(function (el) {
+    el.style.opacity = 0; //set inital state
+
+    observer2.observe(el);
+  }); // observer2.observe(projects, options2);
+  //  Toggle mobile nav
 
   toggle.addEventListener('click', function () {
     nav.classList.toggle('mobile-nav-open');
@@ -293,7 +314,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61324" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42213" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

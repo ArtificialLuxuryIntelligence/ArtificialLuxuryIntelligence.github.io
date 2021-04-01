@@ -133,6 +133,22 @@ table {
   border-spacing: 0;
 }
 
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fade-in 0.7s ease-in forwards;
+}
+
+@keyframes herocolourfade {
+  from {
+    background-image: radial-gradient(circle, transparent, rgba(251, 211, 245, 0.9) 100%);
+  }
+  to {
+    background-image: radial-gradient(circle, transparent, rgba(251, 211, 245, 0.9) 100%);
+  }
+}
 @keyframes bg {
   from {
     background-position: left;
@@ -273,8 +289,6 @@ em {
   margin: 0 auto;
   padding: 0 min(3%, 3rem);
   min-height: 100vh;
-  border-bottom-right-radius: 2rem;
-  border-bottom-left-radius: 2rem;
 }
 .page-container nav {
   transition: all 0.35s ease;
@@ -292,14 +306,15 @@ em {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ce97fb;
-  background: linear-gradient(#ce97fb, #dab0fc);
+  background-color: #fafafa;
+  backdrop-filter: blur(50px);
 }
 .page-container nav .logo {
   opacity: 0;
   color: #fafafa;
 }
 .page-container nav ul {
+  padding: 0.6em 0;
   width: 30%;
   list-style: none;
   display: grid;
@@ -316,7 +331,8 @@ em {
   display: block;
   padding: 0.3em 0.4em;
   text-decoration: none;
-  color: #fafafa;
+  text-align: center;
+  color: #ce97fb;
 }
 .page-container nav ul li:hover a {
   color: #a035f7;
@@ -326,9 +342,6 @@ em {
   display: none;
   color: #fafafa;
   padding: 0.2em;
-}
-.page-container .nav-active {
-  box-shadow: 0 2px 3px #50058e;
 }
 .page-container .nav-active .logo {
   animation: rhs-slide-in 0.7s forwards;
@@ -387,64 +400,83 @@ em {
   z-index: 1;
   color: inherit;
   text-decoration: none;
-  animation: arrowflip 1.4s ease forwards;
+  animation: arrowflip 1s ease forwards;
   animation-delay: 6.5s;
 }
 .page-container > header .text-container h1,
 .page-container > header .text-container h2 {
+  font-weight: 200;
+  display: block;
+  width: 100%;
+}
+.page-container > header .text-container h1 > span,
+.page-container > header .text-container h2 > span {
   opacity: 0;
   font-weight: 200;
   display: block;
   width: 100%;
   animation: fade-in 0.3s ease forwards;
 }
-.page-container > header .text-container h1:nth-child(6),
-.page-container > header .text-container h2:nth-child(6) {
+.page-container > header .text-container h1 > span:nth-child(1),
+.page-container > header .text-container h2 > span:nth-child(1) {
+  margin-bottom: 1.1em;
+}
+.page-container > header .text-container h1 > span:nth-child(2),
+.page-container > header .text-container h2 > span:nth-child(2) {
+  font-size: 1.2em;
   margin-bottom: 0.9em;
 }
-.page-container > header .text-container h1:nth-child(1),
-.page-container > header .text-container h2:nth-child(1) {
+.page-container > header .text-container h1 > span:nth-child(12),
+.page-container > header .text-container h2 > span:nth-child(12) {
+  margin-bottom: 0.9em;
+}
+.page-container > header .text-container h1 > span:nth-child(1),
+.page-container > header .text-container h2 > span:nth-child(1) {
   animation-delay: 0.7s;
 }
-.page-container > header .text-container h1:nth-child(2),
-.page-container > header .text-container h2:nth-child(2) {
+.page-container > header .text-container h1 > span:nth-child(2),
+.page-container > header .text-container h2 > span:nth-child(2) {
   animation-delay: 1.4s;
 }
-.page-container > header .text-container h1:nth-child(3),
-.page-container > header .text-container h2:nth-child(3) {
+.page-container > header .text-container h1 > span:nth-child(3),
+.page-container > header .text-container h2 > span:nth-child(3) {
   animation-delay: 2.1s;
 }
-.page-container > header .text-container h1:nth-child(4),
-.page-container > header .text-container h2:nth-child(4) {
+.page-container > header .text-container h1 > span:nth-child(4),
+.page-container > header .text-container h2 > span:nth-child(4) {
   animation-delay: 2.8s;
 }
-.page-container > header .text-container h1:nth-child(5),
-.page-container > header .text-container h2:nth-child(5) {
+.page-container > header .text-container h1 > span:nth-child(5),
+.page-container > header .text-container h2 > span:nth-child(5) {
   animation-delay: 3.5s;
 }
-.page-container > header .text-container h1:nth-child(6),
-.page-container > header .text-container h2:nth-child(6) {
+.page-container > header .text-container h1 > span:nth-child(6),
+.page-container > header .text-container h2 > span:nth-child(6) {
   animation-delay: 4.2s;
 }
-.page-container > header .text-container h1:nth-child(7),
-.page-container > header .text-container h2:nth-child(7) {
-  animation-delay: 4.75s;
+.page-container > header .text-container h1 > span:nth-child(7),
+.page-container > header .text-container h2 > span:nth-child(7) {
+  animation-delay: 4.4s;
 }
-.page-container > header .text-container h1:nth-child(8),
-.page-container > header .text-container h2:nth-child(8) {
+.page-container > header .text-container h1 > span:nth-child(8),
+.page-container > header .text-container h2 > span:nth-child(8) {
+  animation-delay: 4.6s;
+}
+.page-container > header .text-container h1 > span:nth-child(9),
+.page-container > header .text-container h2 > span:nth-child(9) {
+  animation-delay: 4.8s;
+}
+.page-container > header .text-container h1 > span:nth-child(10),
+.page-container > header .text-container h2 > span:nth-child(10) {
   animation-delay: 5s;
 }
-.page-container > header .text-container h1:nth-child(9),
-.page-container > header .text-container h2:nth-child(9) {
-  animation-delay: 5.25s;
+.page-container > header .text-container h1 > span:nth-child(11),
+.page-container > header .text-container h2 > span:nth-child(11) {
+  animation-delay: 5.2s;
 }
-.page-container > header .text-container h1:nth-child(10),
-.page-container > header .text-container h2:nth-child(10) {
-  animation-delay: 5.5s;
-}
-.page-container > header .text-container h1:nth-child(11),
-.page-container > header .text-container h2:nth-child(11) {
-  animation-delay: 5.75s;
+.page-container > header .text-container h1 > span:nth-child(12),
+.page-container > header .text-container h2 > span:nth-child(12) {
+  animation-delay: 5.4s;
 }
 .page-container > header .text-container h1 {
   font-size: 1em;
@@ -472,6 +504,9 @@ em {
   margin: 0rem auto;
   margin-bottom: 4.4rem;
 }
+.content section:last-of-type {
+  margin-bottom: 0rem;
+}
 .content section:target::before {
   content: "";
   display: block;
@@ -485,7 +520,6 @@ em {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1.4rem 2rem;
-  background: linear-gradient(95.63deg, rgba(255, 255, 255, 0) 4.41%, rgba(206, 151, 251, 0.2) 99.41%);
   border-radius: 25px;
 }
 #projects .project:nth-of-type(1) {
@@ -555,7 +589,6 @@ em {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0rem 2rem;
-  background: linear-gradient(95.63deg, rgba(255, 255, 255, 0) 4.41%, rgba(206, 151, 251, 0.2) 99.41%);
   border-radius: 25px;
 }
 #about .about-contents div {
@@ -577,6 +610,22 @@ em {
 #about .about-contents div p {
   margin: 1em 0;
 }
+#about .about-contents .dev-icons {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+#about .about-contents .dev-icons li {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+#about .about-contents .dev-icons li i {
+  color: #a035f7;
+  font-size: 1.4em;
+  padding: 0.4em 1em;
+}
 
 #contact .contact-contents {
   margin: 0 auto;
@@ -591,7 +640,7 @@ em {
 }
 #contact .contact-contents form label {
   color: #ed48d6;
-  font-size: 1.5em;
+  font-size: 1.2em;
   left: 0.5em;
   position: absolute;
   top: 0.5em;
@@ -737,16 +786,22 @@ button:hover,
     right: 0;
     left: 0;
     grid-template-columns: 1fr;
+    background-color: #ce97fb;
+  }
+  .page-container .nav-active ul li {
+    background-color: #ce97fb;
   }
   .page-container .nav-active ul li a {
+    text-align: right;
     padding: 2em 1em;
-    background-color: #ce97fb;
+    color: #fafafa;
   }
   .page-container .nav-active ul li:nth-of-type(3) a {
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
   }
   .page-container .nav-active #nav-toggle {
+    color: #ce97fb;
     display: block;
   }
   .page-container .nav-active.mobile-nav-open ul {
