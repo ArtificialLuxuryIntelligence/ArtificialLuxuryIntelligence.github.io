@@ -621,6 +621,9 @@ em {
 #projects .project .details .project-buttons {
   margin: 2.4em 0;
 }
+#projects #colourbrain .cover {
+  padding: 2em 20%;
+}
 
 #about .about-contents {
   display: grid;
