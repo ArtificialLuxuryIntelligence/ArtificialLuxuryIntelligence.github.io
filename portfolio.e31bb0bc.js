@@ -240,7 +240,7 @@ function activateNav() {
   var options2 = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.7
+    threshold: 0.22
   };
   var observer2 = new IntersectionObserver(function (entries, observer) {
     entries.forEach(function (entry) {
@@ -342,7 +342,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38859" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
