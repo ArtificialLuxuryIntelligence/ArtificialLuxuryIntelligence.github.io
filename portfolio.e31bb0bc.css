@@ -599,8 +599,8 @@ em {
 #projects .project .cover {
   grid-column: 1/span 1;
   grid-row: 2/span 1;
-  padding: 1.6rem;
-  background-image: radial-gradient(rgba(128, 128, 128, 0.4), transparent 70%);
+  padding: 4.6rem;
+  background-image: radial-gradient(rgba(128, 128, 128, 0.2), transparent 70%);
 }
 #projects .project .cover img {
   width: 100%;
@@ -622,7 +622,7 @@ em {
   margin: 2.4em 0;
 }
 #projects #colourbrain .cover {
-  padding: 2em 20%;
+  padding: 2em 30%;
 }
 
 #about .about-contents {
@@ -667,6 +667,9 @@ em {
   padding: 0.4em 1em;
 }
 
+#contact {
+  padding: 1em 4em;
+}
 #contact .contact-contents {
   padding-bottom: 3em;
   max-width: 100%;
