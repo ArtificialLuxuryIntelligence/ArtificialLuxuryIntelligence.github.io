@@ -755,6 +755,11 @@ button,
   background-color: #ed48d6;
   border: 0.5px solid #ed48d6;
 }
+button i,
+#submit i,
+.external_link i {
+  margin-left: 0.3em;
+}
 button:hover,
 #submit:hover,
 .external_link:hover {
